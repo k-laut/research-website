@@ -80,6 +80,9 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>({
   );
 
   useEffect(() => {
+    // Capture ref value at effect start to avoid stale closure in cleanup
+    const returnFocusElement = returnFocusTo?.current;
+
     if (isActive) {
       // Store current focus to restore later
       previousActiveElement.current = document.activeElement as HTMLElement;
@@ -100,7 +103,7 @@ export function useFocusTrap<T extends HTMLElement = HTMLElement>({
       // Restore focus when trap is deactivated
       if (isActive) {
         const elementToFocus =
-          returnFocusTo?.current || previousActiveElement.current;
+          returnFocusElement || previousActiveElement.current;
         if (elementToFocus && typeof elementToFocus.focus === 'function') {
           elementToFocus.focus();
         }

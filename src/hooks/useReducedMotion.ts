@@ -1,6 +1,35 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
+
+const QUERY = '(prefers-reduced-motion: reduce)';
+
+/**
+ * Gets the current reduced motion preference.
+ * Returns false during SSR.
+ */
+function getSnapshot(): boolean {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia(QUERY).matches;
+}
+
+/**
+ * Server-side snapshot always returns false.
+ */
+function getServerSnapshot(): boolean {
+  return false;
+}
+
+/**
+ * Subscribes to media query changes.
+ */
+function subscribe(callback: () => void): () => void {
+  if (typeof window === 'undefined') return () => {};
+
+  const mediaQuery = window.matchMedia(QUERY);
+  mediaQuery.addEventListener('change', callback);
+  return () => mediaQuery.removeEventListener('change', callback);
+}
 
 /**
  * Custom hook that detects user's reduced motion preference.
@@ -10,32 +39,10 @@ import { useState, useEffect } from 'react';
  * - Windows: Settings → Ease of Access → Display → Show animations
  * - iOS: Settings → Accessibility → Motion → Reduce Motion
  *
+ * Uses useSyncExternalStore for optimal React 18+ integration.
+ *
  * @returns boolean - true if user prefers reduced motion
  */
 export function useReducedMotion(): boolean {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    // Check if window is available (SSR safety)
-    if (typeof window === 'undefined') return;
-
-    // Create media query for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    // Set initial value
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    // Listen for changes (user might toggle preference while on page)
-    const handleChange = (event: MediaQueryListEvent) => {
-      setPrefersReducedMotion(event.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
-  return prefersReducedMotion;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
