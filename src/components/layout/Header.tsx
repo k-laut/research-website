@@ -118,6 +118,9 @@ export function Header() {
             allowOutsideClick: true,
             escapeDeactivates: true,
             onDeactivate: closeMenu,
+            returnFocusOnDeactivate: true,
+            initialFocus: '#mobile-menu-close',
+            fallbackFocus: '#mobile-menu',
           }}
         >
           <div
@@ -126,12 +129,37 @@ export function Header() {
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
+            tabIndex={-1}
           >
             <nav
               className="flex flex-col p-4"
               role="navigation"
               aria-label="Mobile navigation"
             >
+              {/* Close button for accessibility */}
+              <button
+                id="mobile-menu-close"
+                type="button"
+                className="mb-4 self-end rounded-lg p-2 text-foreground hover:bg-surface focus-visible:bg-surface"
+                onClick={closeMenu}
+                aria-label="Close menu"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+
               <ul className="flex flex-col gap-2">
                 {navItems.map((item) => (
                   <li key={item.href}>

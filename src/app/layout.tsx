@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { SkipLinks } from '@/components/accessibility/SkipLinks';
+import { AccessibilityInfo } from '@/components/accessibility/AccessibilityInfo';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
@@ -62,6 +63,7 @@ export default function RootLayout({
       >
         <SkipLinks />
         <Header />
+        <AccessibilityInfo />
         {children}
         <Footer />
       </body>

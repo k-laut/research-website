@@ -5,89 +5,127 @@ export function KramerResearch() {
   return (
     <ResearchSection
       id="kramer-research"
-      title="Levels of Automation in Personal Budgeting"
+      title="Direct Manipulation–Automation Levels in Finance Apps"
       author="Krämer"
-      topic="Automation Levels in Personal Budgeting and Finance Apps"
+      topic="Taxonomy of Automation Levels in Personal Finance Applications"
       className="bg-surface"
     >
       <div className="space-y-8">
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Research Overview</h3>
+          <h3 className="mb-4 text-xl font-semibold">Research Question</h3>
           <p className="text-base leading-relaxed">
-            This research explores different levels of automation in personal
-            budgeting and finance applications, analyzing how varying degrees of
-            automated features impact user experience, financial decision-making,
-            and overall app effectiveness [1]. The framework builds upon
-            Parasuraman et al.&apos;s foundational taxonomy of automation levels [2],
-            adapting it specifically for the personal finance domain.
+            This research investigates how combinations of user control and system
+            knowledge types influence usage autonomy, satisfaction, and financial
+            outcomes in finance apps. The central question: <em>What are the
+            different direct manipulation–automation levels in finance apps
+            currently on the market, and how can they be categorized?</em>
           </p>
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Key Focus Areas</h3>
-          <ul className="list-inside list-disc space-y-2 text-base">
-            <li>
-              <strong>Manual Control:</strong> Traditional budgeting approaches
-              where users input and categorize all transactions manually,
-              following established personal finance methodologies [3]
-            </li>
-            <li>
-              <strong>Semi-Automated:</strong> Systems that suggest categories
-              and actions while requiring user confirmation, balancing automation
-              with user agency [4]
-            </li>
-            <li>
-              <strong>Fully Automated:</strong> AI-driven systems that
-              automatically categorize, analyze, and provide recommendations
-              based on machine learning algorithms [5]
-            </li>
-            <li>
-              <strong>Hybrid Approaches:</strong> Combining manual oversight with
-              automated assistance for optimal user control, as recommended by
-              human-AI collaboration research [6]
-            </li>
-          </ul>
-        </div>
-
-        <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Research Methodology</h3>
+          <h3 className="mb-4 text-xl font-semibold">Research Strategy</h3>
           <p className="text-base leading-relaxed">
-            The research employed a mixed-methods approach combining user studies,
-            comparative analysis of existing finance applications, and prototype
-            testing [1]. Participants were evaluated across different automation
-            levels to measure their confidence, accuracy, and satisfaction with
-            personal budgeting tasks, following established usability evaluation
-            frameworks [7].
+            A systematic literature review was conducted using Google Scholar and
+            Research Rabbit with three search terms: (1) direct manipulation vs
+            interface agents in finance apps, (2) finance apps agents, and (3)
+            finance apps direct manipulation. Papers were filtered through title
+            and abstract screening, with related papers identified via citation
+            analysis [1][2][3].
           </p>
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Key Findings</h3>
+          <h3 className="mb-4 text-xl font-semibold">Classification Categories</h3>
+          <p className="mb-4 text-base">
+            Five conceptual categories were defined for classifying direct
+            manipulation/automation levels:
+          </p>
+          <div className="space-y-3">
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Agent Visibility/Presence</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Is there a visible chatbot/avatar in the foreground, or invisible
+                background automation (e.g., spam filters)? [1]
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Decision Autonomy</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Is the system purely advisory (recommendations) or does it
+                autonomously execute tasks? [1][3]
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Adaptivity &amp; Learning</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Is the system rule-based or ML-enabled? Does it use persistent
+                user models or session-only personalization? [2][4][5]
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Interaction Style</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Direct manipulation (pointing, sliders, immediate feedback) vs.
+                interface agents (proactive suggestions, monitoring, notifications) [2]
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Functional Position</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Client-facing (user interaction, recommendations, chatbots) vs.
+                backend-only (fraud detection, risk scoring) [1][3]
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="card">
+          <h3 className="mb-4 text-xl font-semibold">Five-Level Taxonomy</h3>
           <div className="space-y-4">
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">User Trust &amp; Automation</h4>
-              <p className="mt-2 text-sm text-secondary">
-                Users demonstrated higher trust in semi-automated systems that
-                provided transparency into decision-making processes, compared to
-                fully automated black-box solutions [1]. This aligns with research
-                on explainable AI and user trust [8].
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-medium">Level 0: Full Direct Manipulation</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Visible controls, incremental and reversible actions, immediate
+                feedback (sliders, filters, dynamic queries). High predictability;
+                user remains the acting agent [2]. <em>Example:</em> Manual chart
+                manipulation, point-and-click direct banking interfaces.
               </p>
             </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Learning Curve Considerations</h4>
-              <p className="mt-2 text-sm text-secondary">
-                Higher automation levels reduced the initial learning curve but
-                potentially decreased long-term financial literacy development
-                among users [1], consistent with automation complacency research [9].
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-medium">Level 1: Assistive Direct Manipulation</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Primarily direct manipulation, augmented by visible non-executive
+                agent functions: recommendations, highlighting, details-on-demand.
+                Agents suggest but don&apos;t act autonomously [2][6]. Requires
+                transparent, controllable UIs with good explainability.
               </p>
             </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Customization Preferences</h4>
-              <p className="mt-2 text-sm text-secondary">
-                Users expressed strong preferences for customizable automation
-                levels, allowing them to increase or decrease assistance based on
-                their comfort and expertise [1], supporting adaptive automation
-                design principles [10].
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-medium">Level 2: Semi-Autonomous Agents</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Agents propose actions and execute with user confirmation
+                (recommend-and-execute-with-confirmation). Adaptive but always
+                with user-in-the-loop control [2][5]. <em>Example:</em> Robo-advisors
+                that suggest portfolios and trade only after user approval.
+              </p>
+            </div>
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-medium">Level 3: Autonomous Executive Agents</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Agents act independently within defined policies/constraints
+                (automatic rebalancing, simple trades). Higher invisibility possible
+                but requires monitoring and override capabilities [3][6]. Needs
+                strict risk alignment, real-time monitoring, and regulatory compliance.
+              </p>
+            </div>
+            <div className="border-l-4 border-primary pl-4">
+              <h4 className="font-medium">Level 4: Multi-Agent Orchestrated Autonomy</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Multi-agent orchestration with defined roles (Director, Analyst,
+                Assistant). Dynamic routing between models, cooperative
+                decision-making, adaptive reconfiguration, and self-improvement
+                through evaluation [5][7]. <em>Example:</em> FinRobot, multi-agent
+                stock prediction systems, orchestrated trading simulations.
               </p>
             </div>
           </div>
@@ -101,21 +139,19 @@ export function KramerResearch() {
             navigation or mouse to interact with the prototype.
           </p>
           <FigmaEmbed
-            url="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FexamplePrototype"
-            title="Personal Budgeting App Prototype - Automation Levels"
-            description="Interactive prototype showing three automation levels: Manual, Semi-Automated, and Fully Automated budgeting interfaces. Navigate through different screens to experience how automation affects user interaction with financial data."
+            url="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/make/rBuRLsaU6lRR0iFDhQvRVi/Transaction-input?fullscreen=1&embed=1"
+            title="Transaction Input - Personal Budgeting App Prototype"
+            description="Interactive prototype showing automation levels from Level 0 (full direct manipulation) through Level 4 (AI agents with insights). Navigate through different screens to experience how automation affects user interaction with financial data."
           />
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Implications for Design</h3>
+          <h3 className="mb-4 text-xl font-semibold">Research Limitations</h3>
           <p className="text-base leading-relaxed">
-            The research suggests that finance app designers should consider
-            implementing adjustable automation tiers that adapt to user
-            preferences and expertise levels [1]. This approach balances the
-            efficiency of automation with the educational value of manual
-            engagement, ultimately leading to more effective personal finance
-            management tools [11].
+            The current state of research is limited by challenges in
+            interpretability/explainability, real-time adaptation, generalizability,
+            and scalability. These remain open research gaps that constrain the
+            transition to higher automation levels [3][5].
           </p>
         </div>
 
@@ -124,55 +160,96 @@ export function KramerResearch() {
           <h3 className="mb-4 text-xl font-semibold">References</h3>
           <ol className="list-decimal space-y-2 pl-6 text-sm text-secondary">
             <li id="ref-1">
-              Krämer, S. (2025). Levels of Automation in Personal Budgeting and
-              Finance Applications: A User-Centered Design Study.{' '}
-              <em>Unpublished research manuscript</em>.
+              Pal, A., Gopi, S., &amp; Lee, K. M. (2023). Fintech Agents: Technologies
+              and Theories. <em>Electronics</em>, 12(15), 3301.{' '}
+              <a
+                href="https://doi.org/10.3390/electronics12153301"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.3390/electronics12153301
+              </a>
             </li>
             <li id="ref-2">
-              Parasuraman, R., Sheridan, T. B., &amp; Wickens, C. D. (2000). A model
-              for types and levels of human interaction with automation.{' '}
-              <em>IEEE Transactions on Systems, Man, and Cybernetics</em>, 30(3),
-              286–297.
+              Shneiderman, B., &amp; Maes, P. (1997). Direct manipulation vs. interface
+              agents. <em>Interactions</em>, 4(6), 42–61.{' '}
+              <a
+                href="https://doi.org/10.1145/267505.267514"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.1145/267505.267514
+              </a>
             </li>
             <li id="ref-3">
-              Ramsey, D. (2013). <em>The Total Money Makeover</em>. Thomas Nelson.
+              Satyadhar, J. (2025). A Literature Review of Gen AI Agents in
+              Financial Applications: Models and Implementations.{' '}
+              <em>International Journal of Science and Research (IJSR)</em>,
+              14(1), 1094–1100.{' '}
+              <a
+                href="https://dx.doi.org/10.21275/SR25125102816"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://dx.doi.org/10.21275/SR25125102816
+              </a>
             </li>
             <li id="ref-4">
-              Horvitz, E. (1999). Principles of mixed-initiative user interfaces.{' '}
-              <em>Proceedings of the SIGCHI Conference on Human Factors in
-              Computing Systems</em>, 159–166.
+              Maes, P., &amp; Wexelblat, A. (1996). Interface agents.{' '}
+              <em>CHI &apos;96: Conference Companion on Human Factors in Computing
+              Systems</em>, New York.{' '}
+              <a
+                href="https://doi.org/10.1145/257089.257377"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.1145/257089.257377
+              </a>
             </li>
             <li id="ref-5">
-              Amershi, S., et al. (2019). Guidelines for human-AI interaction.{' '}
-              <em>Proceedings of the CHI Conference on Human Factors in Computing
-              Systems</em>, 1–13.
+              Yang, H., Zhang, B., Wang, N., Guo, C., Zhang, X., Lin, L., Wang, J.,
+              Zhou, T., Guan, M., Zhang, R., &amp; Wang, C. D. (2024). FinRobot: An
+              Open-Source AI Agent Platform for Financial Applications using Large
+              Language Models (2nd ed.). <em>arXiv</em>.{' '}
+              <a
+                href="https://doi.org/10.48550/arXiv.2405.14767"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.48550/arXiv.2405.14767
+              </a>
             </li>
             <li id="ref-6">
-              Shneiderman, B. (2022). <em>Human-Centered AI</em>. Oxford University
-              Press.
+              Lieberman, H. (1997). Autonomous interface agents.{' '}
+              <em>CHI &apos;97: Proceedings of the ACM SIGCHI Conference on Human
+              Factors in Computing Systems</em>, New York.{' '}
+              <a
+                href="https://doi.org/10.1145/258549.258592"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.1145/258549.258592
+              </a>
             </li>
             <li id="ref-7">
-              Nielsen, J. (1994). <em>Usability Engineering</em>. Morgan Kaufmann.
-            </li>
-            <li id="ref-8">
-              Ribeiro, M. T., Singh, S., &amp; Guestrin, C. (2016). Why should I trust
-              you? Explaining the predictions of any classifier.{' '}
-              <em>Proceedings of the ACM SIGKDD International Conference</em>,
-              1135–1144.
-            </li>
-            <li id="ref-9">
-              Parasuraman, R., &amp; Manzey, D. H. (2010). Complacency and bias in
-              human use of automation.{' '}
-              <em>Human Factors</em>, 52(3), 381–410.
-            </li>
-            <li id="ref-10">
-              Oppermann, R. (1994). <em>Adaptive User Support</em>. Lawrence Erlbaum
-              Associates.
-            </li>
-            <li id="ref-11">
-              Fernandes, D., Lynch Jr, J. G., &amp; Netemeyer, R. G. (2014). Financial
-              literacy, financial education, and downstream financial behaviors.{' '}
-              <em>Management Science</em>, 60(8), 1861–1883.
+              Satyadhar, J. (2025). Review of autonomous systems and collaborative
+              AI agent frameworks.{' '}
+              <em>International Journal of Science and Research Archive</em>,
+              14(2), 961–972.{' '}
+              <a
+                href="https://doi.org/10.30574/ijsra.2025.14.2.0439"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.30574/ijsra.2025.14.2.0439
+              </a>
             </li>
           </ol>
         </div>

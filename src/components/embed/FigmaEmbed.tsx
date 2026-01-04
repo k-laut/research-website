@@ -6,9 +6,11 @@ interface FigmaEmbedProps {
   url: string;
   title: string;
   description: string;
+  /** Display as a phone-sized frame (max 450px width, 800px height) */
+  phoneFrame?: boolean;
 }
 
-export function FigmaEmbed({ url, title, description }: FigmaEmbedProps) {
+export function FigmaEmbed({ url, title, description, phoneFrame = true }: FigmaEmbedProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -31,60 +33,74 @@ export function FigmaEmbed({ url, title, description }: FigmaEmbedProps) {
 
       <figure>
         <div
-          className="figma-container"
+          className={phoneFrame ? 'flex justify-center' : ''}
           role="img"
           aria-label={`Interactive Figma prototype: ${title}`}
         >
-          {isLoading && (
-            <div
-              className="skeleton absolute inset-0 flex items-center justify-center"
-              aria-hidden="true"
-            >
-              <span className="text-secondary">Loading prototype...</span>
-            </div>
-          )}
-
-          {hasError ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-surface p-4 text-center">
-              <div>
-                <p className="mb-2 font-medium text-error">
-                  Failed to load prototype
-                </p>
-                <p className="text-sm text-secondary">
-                  The Figma embed could not be loaded. Please check your
-                  connection or try again later.
-                </p>
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary mt-4 inline-flex"
-                >
-                  Open in Figma
-                  <span className="sr-only">(opens in new tab)</span>
-                </a>
+          <div
+            className={
+              phoneFrame
+                ? 'relative w-full overflow-hidden rounded-2xl border border-border bg-surface shadow-lg'
+                : 'figma-container relative'
+            }
+            style={phoneFrame ? { maxWidth: '450px', height: '800px' } : undefined}
+          >
+            {isLoading && (
+              <div
+                className="absolute inset-0 flex items-center justify-center bg-surface"
+                aria-hidden="true"
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <div className="h-8 w-8 animate-spin rounded-full border-4 border-border border-t-primary" />
+                  <span className="text-sm text-secondary">Loading prototype...</span>
+                </div>
               </div>
-            </div>
-          ) : (
-            <iframe
-              src={url}
-              title={title}
-              sandbox="allow-scripts allow-popups allow-same-origin"
-              loading="lazy"
-              allowFullScreen
-              onLoad={handleLoad}
-              onError={handleError}
-              aria-describedby="figma-description"
-            />
-          )}
+            )}
+
+            {hasError ? (
+              <div className="absolute inset-0 flex items-center justify-center bg-surface p-4 text-center">
+                <div>
+                  <p className="mb-2 font-medium text-error">
+                    Failed to load prototype
+                  </p>
+                  <p className="text-sm text-secondary">
+                    The Figma embed could not be loaded. Please check your
+                    connection or try again later.
+                  </p>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary mt-4 inline-flex"
+                  >
+                    Open in Figma
+                    <span className="sr-only">(opens in new tab)</span>
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <iframe
+                src={url}
+                title={title}
+                className="h-full w-full"
+                style={phoneFrame ? { height: '800px' } : undefined}
+                sandbox="allow-scripts allow-popups allow-same-origin"
+                loading="lazy"
+                allowFullScreen
+                onLoad={handleLoad}
+                onError={handleError}
+                aria-describedby="figma-description"
+              />
+            )}
+          </div>
         </div>
 
-        <figcaption id="figma-description" className="mt-4 text-sm text-secondary">
+        <figcaption id="figma-description" className="mt-4 text-center text-sm text-secondary">
           {description}
         </figcaption>
       </figure>
 
-      <div className="mt-4 flex flex-wrap gap-4">
+      <div className="mt-4 flex justify-center">
         <a
           href={url}
           target="_blank"

@@ -12,128 +12,148 @@ export function LauterbachResearch() {
         <div className="card">
           <h3 className="mb-4 text-xl font-semibold">Research Overview</h3>
           <p className="text-base leading-relaxed">
-            This research investigates the psychological, contextual, and
-            practical factors that influence whether users prefer direct
-            manipulation interfaces or agentic AI-driven interfaces [1]. Building
-            on Shneiderman&apos;s foundational work on direct manipulation [2] and
-            recent advances in agentic AI systems [3], this study aims to provide
-            a framework for understanding when each approach is most effective
-            and preferred by users.
+            This research synthesizes findings from multiple studies to identify
+            the key factors that influence whether users prefer direct manipulation
+            interfaces or agentic AI-driven interfaces. The analysis reveals that
+            preference is shaped by cultural background, trust disposition,
+            financial literacy, cognitive load, and system design characteristics.
           </p>
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Interface Paradigms</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="mb-2 font-semibold text-primary">
-                Direct Manipulation
-              </h4>
-              <p className="text-sm text-secondary">
-                Interfaces where users directly interact with visual objects,
-                receiving immediate feedback [2]. Users maintain full control over
-                actions and can see the direct results of their inputs.
-              </p>
-              <ul className="mt-3 list-inside list-disc text-sm text-secondary">
-                <li>Immediate visual feedback</li>
-                <li>Direct control over objects</li>
-                <li>Reversible actions</li>
-                <li>Spatial reasoning engagement</li>
-              </ul>
-            </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="mb-2 font-semibold text-primary">
-                Agentic AI Interface
-              </h4>
-              <p className="text-sm text-secondary">
-                Interfaces where an AI agent interprets user intent and executes
-                complex tasks autonomously [3]. Users delegate actions to the AI,
-                which makes decisions on their behalf.
-              </p>
-              <ul className="mt-3 list-inside list-disc text-sm text-secondary">
-                <li>Natural language interaction</li>
-                <li>Autonomous task completion</li>
-                <li>Intent interpretation</li>
-                <li>Complex workflow handling</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Key Factors Identified</h3>
+          <h3 className="mb-4 text-xl font-semibold">
+            Factors Favoring Direct Manipulation
+          </h3>
           <div className="space-y-4">
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-medium">1. Task Complexity</h4>
+              <h4 className="font-medium">Autonomous Behavior Concerns</h4>
               <p className="mt-1 text-sm text-secondary">
-                Simple, well-defined tasks favor direct manipulation, while
-                complex, multi-step processes show higher preference for agentic
-                AI assistance [1]. This aligns with cognitive load theory [4].
+                Users may feel threatened if chatbots behave too autonomously.
+                The concept of a thinking robot that autonomously generates ideas,
+                desires, and expresses needs is unsettling and evokes strong
+                feelings of eeriness alongside fascination [7].
               </p>
             </div>
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-medium">2. User Expertise</h4>
+              <h4 className="font-medium">Proactive Irrelevant Information</h4>
               <p className="mt-1 text-sm text-secondary">
-                Expert users often prefer direct manipulation for precision and
-                control, while novice users benefit from AI guidance and
-                automation [1], consistent with skill acquisition research [5].
+                When AI proactively provides irrelevant information, it is viewed
+                negatively by users [7]. Users prefer systems that provide relevant,
+                timely assistance rather than unsolicited suggestions.
               </p>
             </div>
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-medium">3. Trust in AI</h4>
+              <h4 className="font-medium">Lack of Explanation</h4>
               <p className="mt-1 text-sm text-secondary">
-                Users with higher AI literacy and positive past experiences show
-                greater willingness to delegate to agentic interfaces [1],
-                supporting trust calibration models [6].
+                Users distrust automated aids, even reliable ones, unless an
+                explanation for errors is provided [9]. If users are not provided
+                with an explanation for the AI&apos;s decisions, they are less likely
+                to use it.
               </p>
             </div>
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-medium">4. Consequence Severity</h4>
+              <h4 className="font-medium">Perceived Comparative Advantage</h4>
               <p className="mt-1 text-sm text-secondary">
-                High-stakes decisions (financial, medical, legal) strongly favor
-                direct manipulation with clear visibility and control [1],
-                reflecting risk perception literature [7].
+                Users judge AI against their own perceived skill. If the AI cannot
+                prove it is adding value above and beyond what the user can do
+                themselves, the user will likely revert to manual control [9].
               </p>
             </div>
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-medium">5. Time Pressure</h4>
+              <h4 className="font-medium">Cultural Values: Individualism</h4>
               <p className="mt-1 text-sm text-secondary">
-                Under time constraints, users show increased acceptance of
-                agentic AI interfaces that can complete tasks more quickly [1],
-                consistent with decision-making under pressure research [8].
-              </p>
-            </div>
-            <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-medium">6. Learning Goals</h4>
-              <p className="mt-1 text-sm text-secondary">
-                When users want to learn or understand a process, direct
-                manipulation is preferred over delegating to an AI agent [1],
-                aligned with constructivist learning theory [9].
+                Individualistic cultures (USA, Northern Europe) strongly prefer
+                direct manipulation and control, viewing AI as a tool for personal
+                goals [1]. Low power distance (egalitarian) societies demand
+                transparent justification from AI systems [2].
               </p>
             </div>
           </div>
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Research Methodology</h3>
-          <p className="text-base leading-relaxed">
-            The study combined quantitative surveys with qualitative interviews
-            across diverse user demographics [1]. Participants were presented with
-            various scenarios spanning different domains (productivity, creative
-            work, data analysis) and asked to indicate their preferred interface
-            approach along with reasoning, following mixed-methods research
-            design principles [10].
-          </p>
-          <div className="mt-4 rounded-lg bg-background p-4">
-            <h4 className="font-medium">Study Metrics</h4>
-            <ul className="mt-2 grid gap-2 text-sm text-secondary sm:grid-cols-2">
-              <li>Perceived control satisfaction</li>
-              <li>Task completion confidence</li>
-              <li>Error recovery preferences</li>
-              <li>Cognitive load assessment [4]</li>
-              <li>Trust and transparency ratings [6]</li>
-              <li>Long-term adoption likelihood</li>
-            </ul>
+          <h3 className="mb-4 text-xl font-semibold">
+            Factors Favoring Agentic AI Interfaces
+          </h3>
+          <div className="space-y-4">
+            <div className="border-l-4 border-accent pl-4">
+              <h4 className="font-medium">Financial Knowledge &amp; Literacy</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Only individuals with an advanced level of financial literacy are
+                more likely to be potential users of robo-advisors [4]. High
+                financial knowledge combined with understanding the benefits of
+                robo-advisory systems makes adoption more probable [3][4].
+              </p>
+            </div>
+            <div className="border-l-4 border-accent pl-4">
+              <h4 className="font-medium">Cognitive Fatigue</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Intensive cognitive effort degrades the capacity for self-control
+                in economic choices, leading to systematic bias toward immediate
+                gains [5]. Under cognitive load, users may prefer delegation to AI.
+              </p>
+            </div>
+            <div className="border-l-4 border-accent pl-4">
+              <h4 className="font-medium">High General Trust Disposition</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Participants who displayed a high level of trust in financial
+                assistants also had a higher tendency to trust in general [7].
+                No significant differences were found based on age or neuroticism.
+              </p>
+            </div>
+            <div className="border-l-4 border-accent pl-4">
+              <h4 className="font-medium">Cultural Values: Collectivism</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Collectivistic cultures (China, Southeast Asia) accept interface
+                agents and AI influence, viewing AI as a collaborative social
+                participant [1]. High power distance (hierarchical) societies
+                perceive legitimacy from institutional authority and extrapolate
+                that onto algorithms [2].
+              </p>
+            </div>
+            <div className="border-l-4 border-accent pl-4">
+              <h4 className="font-medium">Human-in-the-Loop Design</h4>
+              <p className="mt-1 text-sm text-secondary">
+                Embracing a human-in-the-loop (HITL) model allows AI agents to
+                propose actions while humans retain final decision-making,
+                balancing automation with oversight. This approach builds trust
+                and enhances rather than competes with human expertise [10].
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="card">
+          <h3 className="mb-4 text-xl font-semibold">Trust Calibration</h3>
+          <div className="space-y-4">
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">The Trust Spectrum Problem</h4>
+              <p className="mt-2 text-sm text-secondary">
+                High trust leads to over-reliance on AI systems, while low trust
+                leads to disuse [7]. Competence is essential and has a significant
+                impact on trust levels. Usefulness is a determining factor in
+                intention to use AI banking assistants.
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Design Recommendations</h4>
+              <p className="mt-2 text-sm text-secondary">
+                For low trust users: provide detailed information about the
+                assistant&apos;s functions, workings, and calculations to enhance
+                understandability and avoid the &quot;black-box&quot; phenomenon [7].
+                For high trust users: clarify possible risks to facilitate
+                necessary trust calibration and prevent misuse of risky tools.
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-background p-4">
+              <h4 className="font-medium">Key Trust Factors</h4>
+              <p className="mt-2 text-sm text-secondary">
+                The system must be familiar, reliable, and predictable. Users must
+                understand the intention of developers, have general trust, as well
+                as specific trust in automation [6]. Explanations of AI predictions
+                lead to significantly better user performance [8].
+              </p>
+            </div>
           </div>
         </div>
 
@@ -142,33 +162,23 @@ export function LauterbachResearch() {
             Framework for Interface Selection
           </h3>
           <p className="mb-4 text-base">
-            Based on the research findings, a decision framework was developed to
-            help designers choose appropriate interface paradigms [1]:
+            Based on the research synthesis, the following framework guides when
+            each interface paradigm is preferred:
           </p>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <caption className="sr-only">
-                Interface selection framework based on task and user
-                characteristics
+                Interface selection framework based on user and context factors
               </caption>
               <thead>
                 <tr className="border-b border-border">
-                  <th
-                    scope="col"
-                    className="p-3 text-left font-semibold"
-                  >
+                  <th scope="col" className="p-3 text-left font-semibold">
                     Factor
                   </th>
-                  <th
-                    scope="col"
-                    className="p-3 text-left font-semibold"
-                  >
+                  <th scope="col" className="p-3 text-left font-semibold">
                     Direct Manipulation
                   </th>
-                  <th
-                    scope="col"
-                    className="p-3 text-left font-semibold"
-                  >
+                  <th scope="col" className="p-3 text-left font-semibold">
                     Agentic AI
                   </th>
                 </tr>
@@ -176,31 +186,47 @@ export function LauterbachResearch() {
               <tbody>
                 <tr className="border-b border-border">
                   <th scope="row" className="p-3 text-left font-medium">
-                    Task Type
+                    Culture
                   </th>
-                  <td className="p-3 text-secondary">Simple, visual</td>
-                  <td className="p-3 text-secondary">Complex, multi-step</td>
+                  <td className="p-3 text-secondary">
+                    Individualistic, low power distance [1][2]
+                  </td>
+                  <td className="p-3 text-secondary">
+                    Collectivistic, high power distance [1][2]
+                  </td>
                 </tr>
                 <tr className="border-b border-border">
                   <th scope="row" className="p-3 text-left font-medium">
-                    User Goal
+                    User Skill
                   </th>
-                  <td className="p-3 text-secondary">Learning, precision</td>
-                  <td className="p-3 text-secondary">Efficiency, delegation</td>
+                  <td className="p-3 text-secondary">
+                    Low perceived AI advantage [9]
+                  </td>
+                  <td className="p-3 text-secondary">
+                    High financial literacy + understanding benefits [3][4]
+                  </td>
                 </tr>
                 <tr className="border-b border-border">
                   <th scope="row" className="p-3 text-left font-medium">
-                    Stakes
+                    Transparency
                   </th>
-                  <td className="p-3 text-secondary">High consequence</td>
-                  <td className="p-3 text-secondary">Low to medium</td>
+                  <td className="p-3 text-secondary">
+                    No explanation provided [9]
+                  </td>
+                  <td className="p-3 text-secondary">
+                    Clear explanations, HITL model [8][10]
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row" className="p-3 text-left font-medium">
-                    Time
+                    Cognitive State
                   </th>
-                  <td className="p-3 text-secondary">Available</td>
-                  <td className="p-3 text-secondary">Constrained</td>
+                  <td className="p-3 text-secondary">
+                    Low cognitive load, time available
+                  </td>
+                  <td className="p-3 text-secondary">
+                    High cognitive fatigue [5]
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -208,15 +234,13 @@ export function LauterbachResearch() {
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Conclusions</h3>
+          <h3 className="mb-4 text-xl font-semibold">Key Insight</h3>
           <p className="text-base leading-relaxed">
-            The research concludes that neither direct manipulation nor agentic
-            AI interfaces are universally superior [1]. Instead, the optimal approach
-            depends on a complex interplay of task characteristics, user
-            attributes, and contextual factors. Future interface design should
-            consider hybrid approaches that allow users to fluidly transition
-            between direct control and AI delegation based on their current needs
-            and preferences [11].
+            Whether the assistant acts more or less autonomously may not be the
+            primary concern—what matters more is whether the system is generally
+            perceived as useful or potentially hazardous [7]. Competence and
+            usefulness are the key drivers of adoption, while a developer&apos;s
+            benevolent intentions can positively impact trust calibration.
           </p>
         </div>
 
@@ -225,57 +249,126 @@ export function LauterbachResearch() {
           <h3 className="mb-4 text-xl font-semibold">References</h3>
           <ol className="list-decimal space-y-2 pl-6 text-sm text-secondary">
             <li id="ref-1">
-              Lauterbach, K. (2025). Factors Influencing Adoption of Direct
-              Manipulation vs. Agentic AI Interfaces: A Mixed-Methods Study.{' '}
-              <em>Unpublished research manuscript</em>.
+              Li, M., et al. (2024). Cultural differences in AI preferences.{' '}
+              <em>CHI &apos;24: Proceedings of the CHI Conference on Human Factors in
+              Computing Systems</em>.{' '}
+              <a
+                href="https://dl.acm.org/doi/10.1145/3613904.3642660"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://dl.acm.org/doi/10.1145/3613904.3642660
+              </a>
             </li>
             <li id="ref-2">
-              Shneiderman, B. (1983). Direct manipulation: A step beyond
-              programming languages.{' '}
-              <em>IEEE Computer</em>, 16(8), 57–69.
+              KPMG (2024). Trust in AI: A Global Study.{' '}
+              <a
+                href="https://kpmg.com/xx/en/our-insights/ai-and-technology/trust-attitudes-and-use-of-ai.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://kpmg.com/xx/en/our-insights/ai-and-technology/trust-attitudes-and-use-of-ai.html
+              </a>
             </li>
             <li id="ref-3">
-              Wang, L., et al. (2024). A survey on large language model based
-              autonomous agents.{' '}
-              <em>Frontiers of Computer Science</em>, 18(6), 1–26.
+              Lim, K. Y., et al. (2023). Millennials and Robo-Advisory Adoption.{' '}
+              <em>Sustainability</em>, 15(7), 6016.{' '}
+              <a
+                href="https://www.mdpi.com/2071-1050/15/7/6016"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://www.mdpi.com/2071-1050/15/7/6016
+              </a>
             </li>
             <li id="ref-4">
-              Sweller, J. (1988). Cognitive load during problem solving: Effects
-              on learning.{' '}
-              <em>Cognitive Science</em>, 12(2), 257–285.
+              Rossi, A., &amp; Utkus, S. (2022). Financial literacy and
+              robo-advising.{' '}
+              <em>Finance Research Letters</em>.{' '}
+              <a
+                href="https://www.sciencedirect.com/science/article/pii/S1544612322002835"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.1016/j.frl.2022.102835
+              </a>
             </li>
             <li id="ref-5">
-              Dreyfus, S. E., &amp; Dreyfus, H. L. (1980). A five-stage model of the
-              mental activities involved in directed skill acquisition.{' '}
-              <em>California University Berkeley Operations Research Center</em>.
+              Blain, B., et al. (2016). Neural mechanism of cognitive fatigue.{' '}
+              <em>Proceedings of the National Academy of Sciences</em>, 113(33).{' '}
+              <a
+                href="https://www.pnas.org/doi/10.1073/pnas.1520527113"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.1073/pnas.1520527113
+              </a>
             </li>
             <li id="ref-6">
-              Lee, J. D., &amp; See, K. A. (2004). Trust in automation: Designing for
-              appropriate reliance.{' '}
-              <em>Human Factors</em>, 46(1), 50–80.
+              Körber, M. (2019). Theoretical considerations and development of a
+              questionnaire to measure trust in automation. <em>ResearchGate</em>.{' '}
+              <a
+                href="https://www.researchgate.net/publication/323611886"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://www.researchgate.net/publication/323611886
+              </a>
             </li>
             <li id="ref-7">
-              Slovic, P. (1987). Perception of risk.{' '}
-              <em>Science</em>, 236(4799), 280–285.
+              Wester, M., et al. (2023). Trust in AI banking assistants.{' '}
+              <em>Frontiers in Artificial Intelligence</em>, 6.{' '}
+              <a
+                href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2023.1241290/full"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.3389/frai.2023.1241290
+              </a>
             </li>
             <li id="ref-8">
-              Kahneman, D. (2011).{' '}
-              <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux.
+              Chromik, M., &amp; Butz, A. (2022). Educational intervention and AI
+              explanations.{' '}
+              <em>Computers in Human Behavior</em>.{' '}
+              <a
+                href="https://www.sciencedirect.com/science/article/pii/S0747563222003594"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.1016/j.chb.2022.107594
+              </a>
             </li>
             <li id="ref-9">
-              Papert, S. (1980).{' '}
-              <em>Mindstorms: Children, Computers, and Powerful Ideas</em>.
-              Basic Books.
+              Yin, M., et al. (2022). Trust and AI performance perception.{' '}
+              <em>Frontiers in Artificial Intelligence</em>, 5.{' '}
+              <a
+                href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2022.891529/full"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://doi.org/10.3389/frai.2022.891529
+              </a>
             </li>
             <li id="ref-10">
-              Creswell, J. W., &amp; Clark, V. L. P. (2017).{' '}
-              <em>Designing and Conducting Mixed Methods Research</em>. SAGE
-              Publications.
-            </li>
-            <li id="ref-11">
-              Amershi, S., et al. (2019). Guidelines for human-AI interaction.{' '}
-              <em>Proceedings of the CHI Conference on Human Factors in Computing
-              Systems</em>, 1–13.
+              IEEE (2024). Human-in-the-Loop AI Systems.{' '}
+              <em>IEEE Transactions</em>.{' '}
+              <a
+                href="https://ieeexplore.ieee.org/document/11125703"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                https://ieeexplore.ieee.org/document/11125703
+              </a>
             </li>
           </ol>
         </div>
