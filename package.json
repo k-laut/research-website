@@ -16,7 +16,6 @@
     "test:a11y": "jest tests/accessibility"
   },
   "dependencies": {
-    "@next/swc-darwin-arm64": "^16.1.1",
     "clsx": "^2.1.1",
     "focus-trap-react": "^11.0.4",
     "next": "^16.1.1",
