@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { AccessibilityProvider } from '@/contexts/AccessibilityContext';
 import { SkipLinks } from '@/components/accessibility/SkipLinks';
 import { AccessibilityInfo } from '@/components/accessibility/AccessibilityInfo';
 import { Header } from '@/components/layout/Header';
@@ -61,11 +62,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
       >
-        <SkipLinks />
-        <Header />
-        <AccessibilityInfo />
-        {children}
-        <Footer />
+        <AccessibilityProvider>
+          <SkipLinks />
+          <Header />
+          <AccessibilityInfo />
+          {children}
+          <Footer />
+        </AccessibilityProvider>
       </body>
     </html>
   );

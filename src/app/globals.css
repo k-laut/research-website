@@ -273,3 +273,94 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--surface);
   }
 }
+
+/* ========================================
+   ACCESSIBILITY: Font Size Scaling
+   ======================================== */
+
+/* Large font size (125%) */
+html.text-scale-large {
+  font-size: 125%;
+}
+
+/* Larger font size (150%) */
+html.text-scale-larger {
+  font-size: 150%;
+}
+
+/* Ensure text scales properly with rem units */
+html.text-scale-large body,
+html.text-scale-larger body {
+  line-height: 1.7;
+}
+
+/* ========================================
+   ACCESSIBILITY: High Contrast Mode
+   ======================================== */
+
+html.high-contrast {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #ffff00;
+  --primary-hover: #ffff66;
+  --secondary: #ffffff;
+  --accent: #00ffff;
+  --surface: #1a1a1a;
+  --border: #ffffff;
+  --focus-ring: #ffff00;
+  --error: #ff6666;
+  --success: #66ff66;
+}
+
+html.high-contrast a:not(.skip-link):not(.nav-link):not(.btn) {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+html.high-contrast .btn-primary {
+  background: var(--primary);
+  color: #000000;
+  border: 2px solid var(--primary);
+}
+
+html.high-contrast .btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+html.high-contrast .btn-secondary {
+  background: transparent;
+  color: var(--foreground);
+  border: 2px solid var(--foreground);
+}
+
+html.high-contrast .btn-secondary:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+html.high-contrast .card {
+  border-width: 2px;
+}
+
+html.high-contrast :focus-visible {
+  outline-width: 4px;
+  outline-offset: 3px;
+}
+
+/* High contrast mode with dark preference still uses high contrast colors */
+@media (prefers-color-scheme: dark) {
+  html.high-contrast {
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary: #ffff00;
+    --primary-hover: #ffff66;
+    --secondary: #ffffff;
+    --accent: #00ffff;
+    --surface: #1a1a1a;
+    --border: #ffffff;
+    --focus-ring: #ffff00;
+    --error: #ff6666;
+    --success: #66ff66;
+  }
+}

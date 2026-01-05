@@ -1,12 +1,27 @@
 'use client';
 
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { useAccessibility, type FontSize } from '@/contexts/AccessibilityContext';
+
+const fontSizeLabels: Record<FontSize, string> = {
+  normal: 'Normal',
+  large: 'Large (125%)',
+  larger: 'Larger (150%)',
+};
 
 export function AccessibilityInfo() {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+
+  const {
+    fontSize,
+    contrastMode,
+    setFontSize,
+    toggleHighContrast,
+    resetPreferences,
+  } = useAccessibility();
 
   const openModal = useCallback(() => {
     setIsOpen(true);
@@ -167,6 +182,95 @@ export function AccessibilityInfo() {
 
             {/* Content */}
             <div className="space-y-6">
+              {/* Controls */}
+              <section className="rounded-lg border-2 border-primary/30 bg-primary/5 p-4">
+                <h3 className="mb-4 text-lg font-semibold text-foreground">
+                  Adjust Display Settings
+                </h3>
+
+                <div className="space-y-4">
+                  {/* Font Size */}
+                  <div>
+                    <label
+                      htmlFor="font-size-select"
+                      className="mb-2 block text-sm font-medium text-foreground"
+                    >
+                      Text Size
+                    </label>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {(['normal', 'large', 'larger'] as FontSize[]).map((size) => (
+                        <button
+                          key={size}
+                          type="button"
+                          onClick={() => setFontSize(size)}
+                          className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
+                            fontSize === size
+                              ? 'bg-primary text-white'
+                              : 'bg-surface text-foreground hover:bg-border'
+                          }`}
+                          aria-pressed={fontSize === size}
+                        >
+                          {fontSizeLabels[size]}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="mt-2 text-xs text-secondary">
+                      Current: {fontSizeLabels[fontSize]}
+                    </p>
+                  </div>
+
+                  {/* High Contrast */}
+                  <div>
+                    <span className="mb-2 block text-sm font-medium text-foreground">
+                      High Contrast Mode
+                    </span>
+                    <button
+                      type="button"
+                      onClick={toggleHighContrast}
+                      role="switch"
+                      aria-checked={contrastMode === 'high'}
+                      className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
+                        contrastMode === 'high'
+                          ? 'bg-primary'
+                          : 'bg-border'
+                      }`}
+                    >
+                      <span className="sr-only">
+                        {contrastMode === 'high' ? 'Disable' : 'Enable'} high contrast mode
+                      </span>
+                      <span
+                        className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform ${
+                          contrastMode === 'high' ? 'translate-x-7' : 'translate-x-1'
+                        }`}
+                        aria-hidden="true"
+                      />
+                    </button>
+                    <p className="mt-2 text-xs text-secondary">
+                      {contrastMode === 'high'
+                        ? 'High contrast is enabled (black background, yellow text)'
+                        : 'Enable for maximum readability'}
+                    </p>
+                  </div>
+
+                  {/* Reset Button */}
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={resetPreferences}
+                      className="text-sm font-medium text-secondary underline hover:text-foreground"
+                    >
+                      Reset to defaults
+                    </button>
+                  </div>
+                </div>
+
+                {/* Live region for announcements */}
+                <div className="sr-only" aria-live="polite" aria-atomic="true">
+                  Text size: {fontSizeLabels[fontSize]}.
+                  High contrast: {contrastMode === 'high' ? 'enabled' : 'disabled'}.
+                </div>
+              </section>
+
               {/* Standards */}
               <section>
                 <h3 className="mb-3 text-lg font-semibold text-foreground">
