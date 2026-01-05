@@ -132,17 +132,30 @@ export function KramerResearch() {
         </div>
 
         <div className="card" id="figma-prototype">
-          <h3 className="mb-4 text-xl font-semibold">Interactive Prototype</h3>
+          <h3 className="mb-4 text-xl font-semibold">Interactive Prototypes</h3>
           <p className="mb-6 text-base text-secondary">
-            Explore the interactive Figma prototype demonstrating different
+            Explore the interactive Figma prototypes demonstrating different
             automation levels in a personal budgeting application. Use keyboard
-            navigation or mouse to interact with the prototype.
+            navigation or mouse to interact with the prototypes.
           </p>
-          <FigmaEmbed
-            url="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/make/rBuRLsaU6lRR0iFDhQvRVi/Transaction-input?fullscreen=1&embed=1"
-            title="Transaction Input - Personal Budgeting App Prototype"
-            description="Interactive prototype showing automation levels from Level 0 (full direct manipulation) through Level 4 (AI agents with insights). Navigate through different screens to experience how automation affects user interaction with financial data."
-          />
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div>
+              <h4 className="mb-4 text-center text-lg font-medium">Transaction Input</h4>
+              <FigmaEmbed
+                url="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/make/rBuRLsaU6lRR0iFDhQvRVi/Transaction-input?fullscreen=1&embed=1"
+                title="Transaction Input - Personal Budgeting App Prototype"
+                description="Demonstrates automation levels for transaction categorization and input."
+              />
+            </div>
+            <div>
+              <h4 className="mb-4 text-center text-lg font-medium">Saving Goal Setup</h4>
+              <FigmaEmbed
+                url="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/make/5x5g7mDDAEGoz2ehOEIZtZ/Saving-Goal-Setup-Prototype?fullscreen=1&embed=1"
+                title="Saving Goal Setup - Personal Budgeting App Prototype"
+                description="Demonstrates automation levels for setting up and managing savings goals."
+              />
+            </div>
+          </div>
         </div>
 
         <div className="card">
