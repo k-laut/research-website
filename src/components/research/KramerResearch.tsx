@@ -35,51 +35,6 @@ export function KramerResearch() {
         </div>
 
         <div className="card">
-          <h3 className="mb-4 text-xl font-semibold">Classification Categories</h3>
-          <p className="mb-4 text-base">
-            Five conceptual categories were defined for classifying direct
-            manipulation/automation levels:
-          </p>
-          <div className="space-y-3">
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Agent Visibility/Presence</h4>
-              <p className="mt-1 text-sm text-secondary">
-                Is there a visible chatbot/avatar in the foreground, or invisible
-                background automation (e.g., spam filters)? [1]
-              </p>
-            </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Decision Autonomy</h4>
-              <p className="mt-1 text-sm text-secondary">
-                Is the system purely advisory (recommendations) or does it
-                autonomously execute tasks? [1][3]
-              </p>
-            </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Adaptivity &amp; Learning</h4>
-              <p className="mt-1 text-sm text-secondary">
-                Is the system rule-based or ML-enabled? Does it use persistent
-                user models or session-only personalization? [2][4][5]
-              </p>
-            </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Interaction Style</h4>
-              <p className="mt-1 text-sm text-secondary">
-                Direct manipulation (pointing, sliders, immediate feedback) vs.
-                interface agents (proactive suggestions, monitoring, notifications) [2]
-              </p>
-            </div>
-            <div className="rounded-lg border border-border bg-background p-4">
-              <h4 className="font-medium">Functional Position</h4>
-              <p className="mt-1 text-sm text-secondary">
-                Client-facing (user interaction, recommendations, chatbots) vs.
-                backend-only (fraud detection, risk scoring) [1][3]
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
           <h3 className="mb-4 text-xl font-semibold">Five-Level Taxonomy</h3>
           <div className="space-y-4">
             <div className="border-l-4 border-primary pl-4">
