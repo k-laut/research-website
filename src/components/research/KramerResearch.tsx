@@ -1,5 +1,4 @@
 import { ResearchSection } from './ResearchSection';
-import { FigmaEmbed } from '../embed/FigmaEmbed';
 import { PrototypeEmbed } from '../embed/PrototypeEmbed';
 
 export function KramerResearch() {
@@ -105,8 +104,8 @@ export function KramerResearch() {
             </div>
             <div>
               <h4 className="mb-4 text-center text-lg font-medium">Saving Goal Setup</h4>
-              <FigmaEmbed
-                url="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/make/5x5g7mDDAEGoz2ehOEIZtZ/Saving-Goal-Setup-Prototype?fullscreen=1&embed=1"
+              <PrototypeEmbed
+                url="/prototypes/saving-goal-setup/index.html"
                 title="Saving Goal Setup - Personal Budgeting App Prototype"
                 description="Demonstrates automation levels for setting up and managing savings goals."
               />
