@@ -1,5 +1,6 @@
 import { ResearchSection } from './ResearchSection';
 import { PrototypeEmbed } from '../embed/PrototypeEmbed';
+import { PersonasSection } from './PersonasSection';
 
 export function KramerResearch() {
   return (
@@ -85,6 +86,8 @@ export function KramerResearch() {
             </div>
           </div>
         </div>
+
+        <PersonasSection />
 
         <div className="card" id="figma-prototype">
           <h3 className="mb-4 text-xl font-semibold">Interactive Prototypes</h3>
