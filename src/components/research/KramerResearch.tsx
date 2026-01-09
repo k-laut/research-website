@@ -1,5 +1,6 @@
 import { ResearchSection } from './ResearchSection';
 import { FigmaEmbed } from '../embed/FigmaEmbed';
+import { PrototypeEmbed } from '../embed/PrototypeEmbed';
 
 export function KramerResearch() {
   return (
@@ -96,8 +97,8 @@ export function KramerResearch() {
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <h4 className="mb-4 text-center text-lg font-medium">Transaction Input</h4>
-              <FigmaEmbed
-                url="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/make/rBuRLsaU6lRR0iFDhQvRVi/Transaction-input?fullscreen=1&embed=1"
+              <PrototypeEmbed
+                url="/prototypes/transaction-input/index.html"
                 title="Transaction Input - Personal Budgeting App Prototype"
                 description="Demonstrates automation levels for transaction categorization and input."
               />

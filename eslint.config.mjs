@@ -27,6 +27,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prototype source files (already built separately)
+    "src/components/prototypes/**",
+    // Built prototype files in public
+    "public/prototypes/**",
   ]),
 ]);
 
