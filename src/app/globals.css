@@ -1,30 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  --primary: #1e40af;
-  --primary-hover: #1e3a8a;
-  --secondary: #6b7280;
-  --accent: #3b82f6;
-  --surface: #f8fafc;
-  --border: #e2e8f0;
-  --focus-ring: #3b82f6;
-  --error: #dc2626;
-  --success: #16a34a;
+  /* Warm Academic: Deep teal + amber accents */
+  --background: #fefdfb;
+  --foreground: #1c1917;
+  --primary: #0d7377;
+  --primary-hover: #0a5c5f;
+  --secondary: #57534e;
+  --accent: #d97706;
+  --surface: #f5f4f0;
+  --border: #e5e2dd;
+  --focus-ring: #0d7377;
+  --error: #b91c1c;
+  --success: #15803d;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f172a;
-    --foreground: #f1f5f9;
-    --primary: #60a5fa;
-    --primary-hover: #93c5fd;
-    --secondary: #94a3b8;
-    --accent: #3b82f6;
-    --surface: #1e293b;
-    --border: #334155;
-    --focus-ring: #60a5fa;
+    /* Warm Academic dark: Lighter teal + amber */
+    --background: #1c1917;
+    --foreground: #fafaf9;
+    --primary: #14b8a6;
+    --primary-hover: #2dd4bf;
+    --secondary: #a8a29e;
+    --accent: #fbbf24;
+    --surface: #292524;
+    --border: #44403c;
+    --focus-ring: #14b8a6;
     --error: #f87171;
     --success: #4ade80;
   }
