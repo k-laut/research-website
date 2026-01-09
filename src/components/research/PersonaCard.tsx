@@ -27,21 +27,17 @@ export function PersonaCard({ persona }: PersonaCardProps) {
   return (
     <div className="rounded-lg border border-border bg-surface p-4 transition-all hover:border-primary/50">
       {/* Header - always visible */}
-      <div className="flex items-start gap-3">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-          <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
+      <div>
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1 rounded bg-primary/20 px-2 py-0.5 text-xs font-medium text-primary">
+            <Icon className="h-3 w-3" aria-hidden="true" />
+            Level {persona.level}
+          </span>
         </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <span className="rounded bg-primary/20 px-2 py-0.5 text-xs font-medium text-primary">
-              Level {persona.level}
-            </span>
-          </div>
-          <h4 className="mt-1 font-semibold text-foreground">{persona.name}</h4>
-          <p className="text-sm text-secondary">
-            {persona.age}, {persona.role}
-          </p>
-        </div>
+        <h4 className="mt-2 font-semibold text-foreground">{persona.name}</h4>
+        <p className="text-sm text-secondary">
+          {persona.age}, {persona.role}
+        </p>
       </div>
 
       {/* Motto - always visible */}
