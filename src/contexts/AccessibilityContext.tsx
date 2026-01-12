@@ -12,24 +12,29 @@ import {
 
 export type FontSize = 'normal' | 'large' | 'larger';
 export type ContrastMode = 'normal' | 'high';
+export type Theme = 'light' | 'dark';
 
 interface AccessibilityPreferences {
   fontSize: FontSize;
   contrastMode: ContrastMode;
+  theme: Theme;
 }
 
 interface AccessibilityContextValue extends AccessibilityPreferences {
   setFontSize: (size: FontSize) => void;
   setContrastMode: (mode: ContrastMode) => void;
+  setTheme: (theme: Theme) => void;
   increaseFontSize: () => void;
   decreaseFontSize: () => void;
   toggleHighContrast: () => void;
+  toggleTheme: () => void;
   resetPreferences: () => void;
 }
 
 const defaultPreferences: AccessibilityPreferences = {
   fontSize: 'normal',
   contrastMode: 'normal',
+  theme: 'light',
 };
 
 const AccessibilityContext = createContext<AccessibilityContextValue | null>(null);
@@ -92,6 +97,11 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     // Toggle high contrast mode
     html.classList.toggle('high-contrast', preferences.contrastMode === 'high');
 
+    // Apply theme
+    html.classList.remove('light', 'dark');
+    html.classList.add(preferences.theme);
+    html.dataset.theme = preferences.theme;
+
     // Set data attributes for CSS targeting
     html.dataset.fontSize = preferences.fontSize;
     html.dataset.contrast = preferences.contrastMode;
@@ -103,6 +113,10 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
 
   const setContrastMode = useCallback((mode: ContrastMode) => {
     setPreferences((prev) => ({ ...prev, contrastMode: mode }));
+  }, []);
+
+  const setTheme = useCallback((theme: Theme) => {
+    setPreferences((prev) => ({ ...prev, theme }));
   }, []);
 
   const increaseFontSize = useCallback(() => {
@@ -128,6 +142,13 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
+  const toggleTheme = useCallback(() => {
+    setPreferences((prev) => ({
+      ...prev,
+      theme: prev.theme === 'light' ? 'dark' : 'light',
+    }));
+  }, []);
+
   const resetPreferences = useCallback(() => {
     setPreferences(defaultPreferences);
   }, []);
@@ -136,9 +157,11 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     ...preferences,
     setFontSize,
     setContrastMode,
+    setTheme,
     increaseFontSize,
     decreaseFontSize,
     toggleHighContrast,
+    toggleTheme,
     resetPreferences,
   };
 

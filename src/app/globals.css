@@ -15,21 +15,20 @@
   --success: #15803d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Warm Academic dark: Lighter teal + amber */
-    --background: #1c1917;
-    --foreground: #fafaf9;
-    --primary: #14b8a6;
-    --primary-hover: #2dd4bf;
-    --secondary: #a8a29e;
-    --accent: #fbbf24;
-    --surface: #292524;
-    --border: #44403c;
-    --focus-ring: #14b8a6;
-    --error: #f87171;
-    --success: #4ade80;
-  }
+/* Dark theme - user controlled */
+html.dark {
+  /* Warm Academic dark: Lighter teal + amber */
+  --background: #1c1917;
+  --foreground: #fafaf9;
+  --primary: #14b8a6;
+  --primary-hover: #2dd4bf;
+  --secondary: #a8a29e;
+  --accent: #fbbf24;
+  --surface: #292524;
+  --border: #44403c;
+  --focus-ring: #14b8a6;
+  --error: #f87171;
+  --success: #4ade80;
 }
 
 @theme inline {

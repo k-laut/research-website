@@ -1,5 +1,7 @@
 'use client';
 
+import { ThemeToggle } from '@/components/accessibility/ThemeToggle';
+
 const navItems = [
   { href: '#main-content', label: 'Home' },
   { href: '#kramer-research', label: 'Automation Research' },
@@ -23,24 +25,28 @@ export function Header() {
           Research Hub
         </a>
 
-        {/* Navigation */}
-        <nav
-          role="navigation"
-          aria-label="Main navigation"
-        >
-          <ul className="flex items-center gap-1">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="nav-link touch-target rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface hover:text-primary focus-visible:bg-surface"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+
+          {/* Navigation */}
+          <nav
+            role="navigation"
+            aria-label="Main navigation"
+          >
+            <ul className="flex items-center gap-1">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="nav-link touch-target rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface hover:text-primary focus-visible:bg-surface"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   );
